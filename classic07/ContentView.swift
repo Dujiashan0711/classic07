@@ -10,6 +10,8 @@ import SwiftUI
 struct ContentView: View {
     
     @StateObject var age = Age()
+    @StateObject var age2 = Age2()
+    @StateObject var age3 = Age3()
     
     var body: some View {
         VStack{
@@ -29,8 +31,8 @@ struct ContentView: View {
                 .padding(.bottom,70)
             }
             }
+            VStack{
             NavigationView{
-                VStack{
                     HStack{
                         Spacer()
                         NavigationLink(
@@ -65,7 +67,9 @@ struct ContentView: View {
                         }
                         Spacer()
                     }
-                    
+                 }
+                    .environmentObject(age)
+                NavigationView{
                     HStack{
                         Spacer()
                         NavigationLink(
@@ -84,13 +88,13 @@ struct ContentView: View {
                                 .cornerRadius(16)
                             HStack{
                                 Button {
-                                    age.number += 1
+                                    age2.number += 1
                                 } label: {
                                     Text("＋")
                                         .font(.title)
                                 }
                                 Button {
-                                    age.number -= 1
+                                    age2.number -= 1
                                 } label: {
                                     Text("－")
                                         .font(.title)
@@ -100,6 +104,9 @@ struct ContentView: View {
                         }
                         Spacer()
                     }
+                }
+                    .environmentObject(age2)
+                NavigationView{
                     HStack{
                         Spacer()
                         NavigationLink(
@@ -118,25 +125,28 @@ struct ContentView: View {
                                 .cornerRadius(16)
                             HStack{
                                 Button {
-                                    age.number += 1
+                                    age3.number += 1
                                 } label: {
                                     Text("＋")
                                         .font(.title)
                                 }
                                 Button {
-                                    age.number -= 1
+                                    age3.number -= 1
                                 } label: {
                                     Text("－")
                                         .font(.title)
                                 }
+                                .environmentObject(age3)
                             }
 
                             .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         }
                         Spacer()
-                    }
+                    
                 }
-            }.environmentObject(age)
+                }
+                .environmentObject(age3)
+            }
         }
     }
 }
@@ -157,19 +167,19 @@ struct other: View {
 }
 struct other2: View {
     
-    @EnvironmentObject var age : Age
+    @EnvironmentObject var age2 : Age2
     
     var body: some View {
-        Text("觸控音效：\(age.number)")
+        Text("觸控音效：\(age2.number)")
             .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
     }
 }
 struct other3: View {
     
-    @EnvironmentObject var age : Age
+    @EnvironmentObject var age3 : Age3
     
     var body: some View {
-        Text("靈敏度：\(age.number)")
+        Text("靈敏度：\(age3.number)")
             .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
     }
 }
