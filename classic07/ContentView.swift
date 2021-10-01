@@ -16,23 +16,22 @@ struct ContentView: View {
     var body: some View {
         VStack{
             ZStack{
-                Rectangle()
-                    .frame(width: 430, height: 140, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .foregroundColor(Color(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)))
-                    .ignoresSafeArea()
             HStack{
             Image(systemName:"gearshape")
                 .font(.largeTitle)
-                .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
-                .padding(.bottom,70)
-            Text("Setting")
+                .foregroundColor(Color(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)))
+                .padding(.top,60)
+            Text("設定頁面")
                 .font(.largeTitle)
-                .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
-                .padding(.bottom,70)
+                .foregroundColor(Color(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)))
+                .padding(.top,60)
             }
             }
-            VStack{
             NavigationView{
+                ZStack{
+                    Rectangle()
+                        .frame(width: 430, height: 150, alignment: .center)
+                        .foregroundColor(Color(#colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)))
                     HStack{
                         Spacer()
                         NavigationLink(
@@ -55,21 +54,28 @@ struct ContentView: View {
                                 } label: {
                                     Text("＋")
                                         .font(.title)
+                                        .foregroundColor(Color(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)))
                                 }
                                 Button {
                                     age.number -= 1
                                 } label: {
                                     Text("－")
                                         .font(.title)
+                                        .foregroundColor(Color(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)))
                                 }
                             }
                             .frame(width: 100, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         }
                         Spacer()
                     }
-                 }
+                }
+                }
                     .environmentObject(age)
                 NavigationView{
+                    ZStack{
+                        Rectangle()
+                            .frame(width: 430, height: 150, alignment: .center)
+                            .foregroundColor(Color(#colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)))
                     HStack{
                         Spacer()
                         NavigationLink(
@@ -92,21 +98,27 @@ struct ContentView: View {
                                 } label: {
                                     Text("＋")
                                         .font(.title)
+                                        .foregroundColor(Color(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)))
                                 }
                                 Button {
                                     age2.number -= 1
                                 } label: {
                                     Text("－")
                                         .font(.title)
+                                        .foregroundColor(Color(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)))
                                 }
                             }
-                            .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         }
                         Spacer()
                     }
                 }
+                }
                     .environmentObject(age2)
                 NavigationView{
+                    ZStack{
+                        Rectangle()
+                            .frame(width: 430, height: 150, alignment: .bottom)
+                            .foregroundColor(Color(#colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)))
                     HStack{
                         Spacer()
                         NavigationLink(
@@ -129,27 +141,25 @@ struct ContentView: View {
                                 } label: {
                                     Text("＋")
                                         .font(.title)
+                                        .foregroundColor(Color(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)))
                                 }
                                 Button {
                                     age3.number -= 1
                                 } label: {
                                     Text("－")
                                         .font(.title)
+                                        .foregroundColor(Color(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)))
                                 }
-                                .environmentObject(age3)
                             }
-
-                            .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         }
                         Spacer()
-                    
                 }
                 }
-                .environmentObject(age3)
+            }.environmentObject(age3)
+            Spacer()
             }
         }
     }
-}
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
