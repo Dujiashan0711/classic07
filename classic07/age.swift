@@ -15,4 +15,7 @@ class Age2 : ObservableObject  {
 }
 class Age3 : ObservableObject  {
     @Published var number : Int = 0
+   
 }
+
+

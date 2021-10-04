@@ -183,8 +183,12 @@ struct other: View {
     @EnvironmentObject var age : Age
     
     var body: some View {
+        HStack{
+            Image(systemName: "music.quarternote.3")
+                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
         Text("系統音量：\(age.number)")
             .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+        }
     }
 }
 struct other2: View {
@@ -192,8 +196,12 @@ struct other2: View {
     @EnvironmentObject var age2 : Age2
     
     var body: some View {
+        HStack{
+            Image(systemName: "speaker.wave.2")
+                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
         Text("觸控音效：\(age2.number)")
             .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+        }
     }
 }
 struct other3: View {
@@ -201,7 +209,11 @@ struct other3: View {
     @EnvironmentObject var age3 : Age3
     
     var body: some View {
+        HStack{
+            Image(systemName: "slider.vertical.3")
+                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
         Text("靈敏度：\(age3.number)")
             .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+        }
     }
 }
