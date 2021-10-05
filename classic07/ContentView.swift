@@ -42,7 +42,7 @@ struct ContentView: View {
                             destination: other(),
                             label: {
                                 Text("系統音量")
-                                    .foregroundColor(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)))
+                                    .foregroundColor(Color(#colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)))
                                     .font(.title)
                             }
                         )
@@ -54,14 +54,14 @@ struct ContentView: View {
                                 .cornerRadius(16)
                             HStack{
                                 Button {
-                                    age.number += 1
+                                    age.number += 10
                                 } label: {
                                     Text("＋")
                                         .font(.title)
                                         .foregroundColor(Color(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)))
                                 }
                                 Button {
-                                    age.number -= 1
+                                    age.number -= 10
                                 } label: {
                                     Text("－")
                                         .font(.title)
@@ -102,14 +102,14 @@ struct ContentView: View {
                                 .cornerRadius(16)
                             HStack{
                                 Button {
-                                    age2.number += 1
+                                    age2.number += 10
                                 } label: {
                                     Text("＋")
                                         .font(.title)
                                         .foregroundColor(Color(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)))
                                 }
                                 Button {
-                                    age2.number -= 1
+                                    age2.number -= 10
                                 } label: {
                                     Text("－")
                                         .font(.title)
@@ -149,14 +149,14 @@ struct ContentView: View {
                                 .cornerRadius(16)
                             HStack{
                                 Button {
-                                    age3.number += 1
+                                    age3.number += 10
                                 } label: {
                                     Text("＋")
                                         .font(.title)
                                         .foregroundColor(Color(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)))
                                 }
                                 Button {
-                                    age3.number -= 1
+                                    age3.number -= 10
                                 } label: {
                                     Text("－")
                                         .font(.title)
@@ -183,24 +183,46 @@ struct other: View {
     @EnvironmentObject var age : Age
     
     var body: some View {
-        HStack{
-            Image(systemName: "music.quarternote.3")
-                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-        Text("系統音量：\(age.number)")
-            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+        VStack{
+        ZStack{
+            Rectangle()
+                .frame(width:150, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+        .foregroundColor(Color(#colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)))
+        .cornerRadius(16)
+       Rectangle()
+        .frame(width: 130, height: 12, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+        .foregroundColor(.white)
+        .cornerRadius(16)
+            Rectangle()
+                .frame(width: CGFloat(Double(age.number)), height: 10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+             .foregroundColor(Color(#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)))
+             .cornerRadius(16)
+            
+          }
         }
     }
-}
+    }
 struct other2: View {
     
     @EnvironmentObject var age2 : Age2
     
     var body: some View {
-        HStack{
-            Image(systemName: "speaker.wave.2")
-                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-        Text("觸控音效：\(age2.number)")
-            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+        VStack{
+        ZStack{
+            Rectangle()
+        .frame(width:150, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+        .foregroundColor(Color(#colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)))
+        .cornerRadius(16)
+       Rectangle()
+        .frame(width: 130, height: 12, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+        .foregroundColor(.white)
+        .cornerRadius(16)
+            Rectangle()
+             .frame(width: CGFloat(Double(age2.number)), height: 10, alignment: .center)
+             .foregroundColor(Color(#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)))
+             .cornerRadius(16)
+            .padding(.trailing,28)
+          }
         }
     }
 }
@@ -209,11 +231,22 @@ struct other3: View {
     @EnvironmentObject var age3 : Age3
     
     var body: some View {
-        HStack{
-            Image(systemName: "slider.vertical.3")
-                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-        Text("靈敏度：\(age3.number)")
-            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+        VStack{
+        ZStack{
+            Rectangle()
+        .frame(width:150, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+        .foregroundColor(Color(#colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)))
+        .cornerRadius(16)
+       Rectangle()
+        .frame(width: 130, height: 12, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+        .foregroundColor(.white)
+        .cornerRadius(16)
+            Rectangle()
+             .frame(width: CGFloat(Double(age3.number)), height: 10, alignment: .center)
+             .foregroundColor(Color(#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)))
+             .cornerRadius(16)
+            .padding(.trailing,28)
+          }
         }
     }
 }
