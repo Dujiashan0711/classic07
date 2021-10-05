@@ -42,7 +42,7 @@ struct ContentView: View {
                             destination: other(),
                             label: {
                                 Text("系統音量")
-                                    .foregroundColor(Color(#colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)))
+                                    .foregroundColor(Color(#colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)))
                                     .font(.title)
                             }
                         )
@@ -193,11 +193,14 @@ struct other: View {
         .frame(width: 130, height: 12, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
         .foregroundColor(.white)
         .cornerRadius(16)
+            HStack{
             Rectangle()
-                .frame(width: CGFloat(Double(age.number)), height: 10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .frame(width: CGFloat(Double(age.number)), height: 10, alignment: .trailing)
              .foregroundColor(Color(#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)))
              .cornerRadius(16)
-            
+                .padding(.trailing,120)
+                .frame(width: 130, height: 12, alignment: .leading)
+            }
           }
         }
     }
@@ -218,10 +221,11 @@ struct other2: View {
         .foregroundColor(.white)
         .cornerRadius(16)
             Rectangle()
-             .frame(width: CGFloat(Double(age2.number)), height: 10, alignment: .center)
+             .frame(width: CGFloat(Double(age2.number)), height: 10, alignment: .trailing)
              .foregroundColor(Color(#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)))
              .cornerRadius(16)
-            .padding(.trailing,28)
+            .padding(.trailing,120)
+                .frame(width: 130, height: 12, alignment: .leading)
           }
         }
     }
@@ -245,7 +249,8 @@ struct other3: View {
              .frame(width: CGFloat(Double(age3.number)), height: 10, alignment: .center)
              .foregroundColor(Color(#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)))
              .cornerRadius(16)
-            .padding(.trailing,28)
+            .padding(.trailing,120)
+            .frame(width: 130, height: 12, alignment: .leading)
           }
         }
     }
